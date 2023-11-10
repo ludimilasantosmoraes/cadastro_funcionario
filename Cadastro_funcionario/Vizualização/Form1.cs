@@ -41,7 +41,6 @@ namespace Cadastro_funcionario
         {
             try
             {
-                Funcionario funcionario = new Funcionario();
                 
                 string nome = nome_tx.Text;
                 string funcao = funcao_tx.Text;
@@ -55,7 +54,10 @@ namespace Cadastro_funcionario
                 string cpf = cpf_tx.Text;
                 string rg = rg_tx.Text;
                 DateTime datanascimento = Convert.ToDateTime(datanascimento_tx.Text);
+                Funcionario f = new Funcionario(nome, funcao, estado, cidade, endereco, telefone, email, estadoCivil, cpf, rg, salario, datanascimento);
+
                 MessageBox.Show(ValidarCpf.ValidaCPF(cpf).ToString());
+                MessageBox.Show(f.Nome + " cadastrado.");
 
             }
             catch(Exception ex)
